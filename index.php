@@ -1,21 +1,71 @@
 <!DOCTYPE html>
-
-
-
 <html>
 <head>
     <title>Ceci <?php echo "Patience"?> est une page de test avec des balises PHP</title>
     <meta charset="utf-8" />
 </head>
 <body>
+    <h2> Travail du 27 juin 2024</h2>
+        <?php
+            $fullname = "Mathieu Nebra";
+            echo "Bonjour ";
+            echo $fullname;
+            echo " et bienvenue sur le site !<br><br>";
 
-   
+            $fullname = "Mathieu Nebra";
+            echo 'Bonjour $fullname et bienvenue sur le site !<br><br>';
 
-        <h2>Page de test</h2>
-        
+            // Concatenation avec l'opérateur .
+            $prenom = "Kori";
+            $nom = "Pak";
+            echo $prenom . ' ' . $nom. '<br><br>'; // Affiche "John Doe"  
+
+            // Interpolation dans une chaîne entre guillemets doubles
+            $prenom = "John";
+            $nom = "Doe";
+            echo "Mon prénom est $prenom et mon nom est $nom <br><br>"; // Affiche "Mon prénom est John et mon nom est Doe"
+
+            // Interpolation situation complexe: Utilisation des accolades pour des expressions complexes
+            $prenom = "John";
+            $nom = "Doe";
+            $age = 30;
+            $info = "{$prenom} {$nom} a {$age} ans.<br><br>";
+            echo $info; // Affiche "John Doe a 30 ans."
+
+            // Utilisation complexe de la concaténation
+            $quantite = 3;
+            $produit = "pommes";
+            $prixUnitaire = 1.25;
+
+            echo "Vous avez acheté " . $quantite . " " . $produit . " pour un total de " . ($quantite * $prixUnitaire) . " euros.<br><br>"; // Affiche "Vous avez acheté 3 pommes pour un total de 3.75 euros."
+
+            //Utilisation complexe de l'intérpolation
+            $quantite = 3;
+            $produit = "pommes";
+            $prixUnitaire = 1.25;
+            echo "Vous avez acheté $quantite $produit pour un total de " . ($quantite * $prixUnitaire) . " euros.<br><br>";
+
+            $number = 2 + 4; // $number prend la valeur 6
+            $number = 5 - 1; // $number prend la valeur 4
+            $number = 3 * 5; // $number prend la valeur 15
+            $number = 10 / 2; // $number prend la valeur 5
+
+            // Allez on rajoute un peu de difficulté
+            $number = 3 * 5 + 1; // $number prend la valeur 16
+            $number = (1 + 2) * 2; // $number prend la valeur 6
+
+            // On utilise des variables
+            $number = 10;
+            echo ($number + 5) * $number . "<br><br>"; // $result prend la valeur 150
+
+            // Modulo
+            $number = 10 % 3; 
+            echo $number // $number prend la valeur 1 car il reste 1
+        ?> 
+<!------------------------------------------------------------------------------------->
+    <h2>Travail du 26 juin 2024 </h2>    
         <p>
             Cette page contient du code HTML avec des balises PHP.<br /> <br />
-            
             <?php
              echo "Bonjour, le monde !"; 
              ?>
@@ -118,8 +168,9 @@
 
         // phpinfo(INFO_GENERAL);
 
-        phpinfo(INFO_ENVIRONMENT);
+        // phpinfo(INFO_ENVIRONMENT);
 
+        
 
     ?>
 
