@@ -72,7 +72,48 @@
             $nom = null;
             $nomComplet = $nom ?? "Anonyme";
             echo "Nom: " . $nomComplet;
-                
+
+            // Notion de Boucle en PHP
+            // Boucle while
+            $i = 2;
+            while ($i < 10) {
+                echo $i."<br>";
+                $i++;
+            }
+
+            //Boucle do...while
+            $i = 0;
+            do {
+                echo $i;
+                $i++;
+            } while ($i < 10);
+
+            //Boucle for
+            for ($i = 0; $i < 10; $i++) {
+                echo $i."<br>";
+            }   
+            
+            // Boucle foreach
+            $personne = ["nom" => "John", "age" => 30, "ville" => "Paris"];
+            foreach ($personne as $cle => $valeur) {
+                echo "$cle: $valeur <br>";
+            }
+
+            //Instruction de control Break
+            for ($i = 0; $i < 10; $i++) {
+                if ($i == 5) {
+                    break; // Sort de la boucle lorsque $i est égal à 5
+                }
+                echo $i;
+            }
+            
+            // Instruction de control continue
+            for ($i = 0; $i < 10; $i++) {
+                if ($i == 5) {
+                    continue; // Passe à l'itération suivante lorsque $i est égal à 5
+                }
+                echo $i;
+            }                  
         ?>
 <!------------------------------------------------------------------------------------>
     <h2> Travail du 27 juin 2024</h2>
