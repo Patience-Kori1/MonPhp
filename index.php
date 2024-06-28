@@ -34,6 +34,44 @@
             } else {
                 echo "Échec";
             }
+
+            // switch (n) {
+            //     case valeur1:
+            //         // Code à exécuter si n == valeur1
+            //         break;
+            //     case valeur2:
+            //         // Code à exécuter si n == valeur2
+            //         break;
+            //     default:
+            //         // Code à exécuter si n ne correspond à aucune valeur
+            // }
+            
+            // Structure switch / case
+            $jour = "Dada";
+            switch ($jour) {
+                case "lundi":
+                    echo "Aujourd'hui, c'est lundi.";
+                    break;
+                case "mardi":
+                    echo "Aujourd'hui, c'est mardi.";
+                    break;
+                case "mercredi":
+                    echo "Aujourd'hui, c'est mercredi.";
+                    break;
+                default:
+                    echo "Aujourd'hui, ce n'est ni lundi, ni mardi, ni mercredi.<br><br>";
+            }
+            
+            // L'opérateur ternaire
+            // variable = (condition) ? valeur_si_vrai : valeur_si_faux;
+            $age = 10;
+            $status = ($age >= 18) ? "majeur" : "mineur<br><br>";
+            echo "Vous êtes " . $status;
+
+            // L'opérateur de coalescence nulle (??) 
+            $nom = null;
+            $nomComplet = $nom ?? "Anonyme";
+            echo "Nom: " . $nomComplet;
                 
         ?>
 <!------------------------------------------------------------------------------------>
