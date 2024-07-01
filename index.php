@@ -5,6 +5,39 @@
     <meta charset="utf-8" />
 </head>
 <body>
+    <h3> Travail du 01 juillet 2024 </h3>
+        <?php
+            $isEnabled = true; // La condition d'accès
+
+            if ($isEnabled === true) {
+                echo "Vous êtes autorisé(e) à accéder au site ✅<br><br>";
+            }
+            else {
+                echo "Vous n'êtes pas autorisé(e) à accéder au site ❌<br><br>";
+            }
+
+            // Les méthodes courtes de faire des booleans
+            $isAllowedToEnter = false;
+            if ($isAllowedToEnter) {
+                echo "Bienvenue petit nouveau. :o)<br><br>";
+            }
+            else {
+                echo "T'as pas le droit d'entrer !!!<br><br>";
+            }
+
+            if (! $isAllowedToEnter) {
+
+            }
+
+            $isEnabled = true;
+            $isOwner = false;
+            if ($isEnabled && $isOwner) {
+                echo 'Accès à la recette validé ✅';
+            } else {
+                echo 'Accès à la recette interdit ! ❌';
+            }
+        ?>
+
     <h3>Travail du 28 juin 2024</h3>
         <?php
             // if (condition1) {
