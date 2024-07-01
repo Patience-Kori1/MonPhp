@@ -47,6 +47,20 @@
                echo 'Accès à la recette interdit ! ❌';
            }
         ?>
+        <!--La syntaxe alternative des conditions et boucles -->
+        <?php $chickenRecipesEnabled = true; ?>
+
+        <?php if ($chickenRecipesEnabled): ?> <!-- Ne pas oublier le ":" -->
+            <h4>Liste des recettes à base de poulet</h4>
+        <?php endif; ?> <!-- Ni le ";" après le endif -->
+
+        <?php $recipes = ['Poulet rôti', 'Poulet curry', 'Poulet basquaise']; ?>
+        <ul>
+            <?php foreach ($recipes as $recipe): ?>
+                <li><?php echo $recipe; ?></li>
+            <?php endforeach; ?>
+        </ul>
+
 
     <h3>Travail du 28 juin 2024</h3>
         <?php
