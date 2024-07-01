@@ -29,13 +29,23 @@
 
             }
 
-            $isEnabled = true;
-            $isOwner = false;
-            if ($isEnabled && $isOwner) {
-                echo 'Accès à la recette validé ✅';
-            } else {
-                echo 'Accès à la recette interdit ! ❌';
-            }
+           // Les comparaisons avec conditions multiples
+           $isEnabled = true;
+           $isOwner = false;
+           if ($isEnabled && $isOwner) {
+               echo 'Accès à la recette validé ✅';
+           } else {
+               echo 'Accès à la recette interdit ! ❌';
+           }
+
+           $isEnabled = true;
+           $isOwner = false;
+           $isAdmin = true;
+           if (($isEnabled && $isOwner) || $isAdmin) {
+               echo 'Accès à la recette validé ✅';
+           } else {
+               echo 'Accès à la recette interdit ! ❌';
+           }
         ?>
 
     <h3>Travail du 28 juin 2024</h3>
