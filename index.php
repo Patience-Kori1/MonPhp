@@ -4,7 +4,52 @@
     <title>Ceci <?php echo "Patience"?> est une page de test avec des balises PHP</title>
     <meta charset="utf-8" />
 </head>
-<body>
+<body style="margin-left: 50px;">
+    <h2 style="color:crimson"> Travail du 01 juillet 2024 </h2>
+        <?php
+            //NOTION DE TABLEAU EN PHP
+
+            $user1 = ['Mickaël Andrieu', 'email', 'S3cr3t', 34];
+            echo $user1[0]."<br><br>"; // "Mickaël Andrieu"
+            echo $user1[1]."<br><br>"; // "email"
+            echo $user1[3]."<br><br>"; // 34
+
+            $mickael = ['Mickaël Andrieu', 'mickael.andrieu@exemple.com', 'S3cr3t', 34, 65.4];
+            $mathieu = ['Mathieu Nebra', 'mathieu.nebra@exemple.com', 'devine', 33];
+            $laurene = ['Laurène Castor', 'laurene.castor@exemple.com', 'P4ssw0rD', 28];
+            $users = [$mickael, $mathieu, $laurene];
+
+            // Utiliser print_r pour afficher le tableau sans la balise <pre>
+            echo "<h4>Utiliser print_r pour afficher le tableau sans  la balise pre </h4>";
+            echo print_r($mickael)."<br><br>"; 
+
+            // Utiliser print_r pour afficher le tableau avec  la balise <pre>
+            echo "<h4>Utiliser print_r pour afficher le tableau avec  la balise pre </h4>";
+            echo "<pre>";
+            print_r($mickael);
+            echo "</pre>";
+
+            // Utiliser var_dump pour afficher le tableau sans la balise <pre>
+            echo "<h4>Utiliser var_dump pour afficher le tableau sans  la balise pre </h4>";
+            echo var_dump($mickael)."<br><br>";
+
+            // Utiliser var_dump pour afficher le tableau avec la balise <pre>
+            echo "<h4>Utiliser var_dump pour afficher le tableau avec la balise pre </h4>";
+            echo "<pre>";
+            var_dump($mickael);
+            echo "</pre>";
+
+            // Utiliser var_export pour afficher le tableau sans la balise <pre>
+            echo "<h4>Utiliser var_export pour afficher le tableau sans  la balise pre </h4>";
+            echo var_export($mickael)."<br><br>"; 
+
+            // Utiliser var_export pour afficher le tableau avec la balise <pre>
+            echo "<h4>Utiliser var_export pour afficher le tableau avec  la balise pre </h4>";
+            echo "<pre>";
+            var_export($mickael);
+            echo "</pre>";
+        ?>
+<!--------------------------------------------------------------------------------->
     <h3> Travail du 01 juillet 2024 </h3>
         <?php
             $isEnabled = true; // La condition d'accès
