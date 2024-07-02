@@ -48,6 +48,15 @@
             echo "<pre>";
             var_export($mickael);
             echo "</pre>";
+
+            // Utiliser implode pour afficher le tableau sans la balise <pre>
+            echo "<h4>Utiliser implode pour afficher le tableau sans  la balise pre </h4>";
+            echo implode(" ; ", $mickael);
+            // Utiliser implode pour afficher le tableau avec la balise <pre>
+            echo "<h4>Utiliser implode pour afficher le tableau avec  la balise pre </h4>";
+            echo "<pre>";
+            echo implode(" ; ", $mickael);
+            echo "</pre>";
         ?>
 <!--------------------------------------------------------------------------------->
     <h3> Travail du 01 juillet 2024 </h3>
