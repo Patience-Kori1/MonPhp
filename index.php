@@ -84,7 +84,62 @@
             while ($counter < $lines) {
                 echo $users[$counter]['full_name'] . ' =>' . $users[$counter]['email'] . ' =>' .$users[$counter]['age'].' years old'.'<br />';
                 $counter++;
-            }    
+            }   
+
+            //Itérer sur un tableau des tableaux : Tableau des utilisateurs
+            $users = [
+                [
+                    'full_name' => 'Mickaël Andrieu',
+                    'email' => 'mickael.andrieu@exemple.com',
+                    'age' => 34,
+                ],
+                [
+                    'full_name' => 'Mathieu Nebra',
+                    'email' => 'mathieu.nebra@exemple.com',
+                    'age' => 34,
+                ],
+                [
+                    'full_name' => 'Laurène Castor',
+                    'email' => 'laurene.castor@exemple.com',
+                    'age' => 28,
+                ],
+            ];
+
+            $lines = count($users); // nombre d'utilisateurs dans le tableau
+            $counter = 0;
+            while ($counter < $lines) {
+                echo $users[$counter]['full_name'] . ' =>' . $users[$counter]['email'] . ' =>' .$users[$counter]['age'].' years old'.'<br />';
+                $counter++;
+            } 
+            echo "<br><br>";
+
+            //Tableaux des recettes et son affichage
+            $recipes = [
+                [
+                    'title' => 'Poulet au cury',
+                    'author' =>'Patos'
+                ],
+                [
+                    'title'=> 'Boeuf bourgignon',
+                    'author' =>'Ousman'
+                ],
+                [
+                    'title'=> 'Les lasagnes',
+                    'author'=> 'Alexia'
+                ],
+                [
+                    'title'=> 'Poulet au curry',
+                    'author'=> 'Garcin'
+                ],
+            ];
+
+            $length = count($recipes);
+            $counter1 = 0;
+            $number = 1;
+            for ($counter1=0; $counter1 < $length; $counter1++) {
+                $numberRecipe = $number++;
+                echo $numberRecipe .". Recette : " . $recipes[$counter1]['title'] . " || Auteur : ". $recipes[$counter1]['author']. "<br>";
+            } 
         ?>
 <!------------------------------------------------------------------------------------ >
     <h3> Travail du 01 juillet 2024 </h3>
