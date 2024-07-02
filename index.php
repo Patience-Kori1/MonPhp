@@ -10,14 +10,17 @@
             //NOTION DE TABLEAU EN PHP
 
             $user1 = ['Mickaël Andrieu', 'email', 'S3cr3t', 34];
-            echo $user1[0]."<br><br>"; // "Mickaël Andrieu"
-            echo $user1[1]."<br><br>"; // "email"
+            echo $user1[0]."<br>"; // "Mickaël Andrieu"
+            echo $user1[1]."<br>"; // "email"
             echo $user1[3]."<br><br>"; // 34
 
             $mickael = ['Mickaël Andrieu', 'mickael.andrieu@exemple.com', 'S3cr3t', 34, 65.4];
             $mathieu = ['Mathieu Nebra', 'mathieu.nebra@exemple.com', 'devine', 33];
             $laurene = ['Laurène Castor', 'laurene.castor@exemple.com', 'P4ssw0rD', 28];
             $users = [$mickael, $mathieu, $laurene];
+            echo $users[2][3]."<br>";
+
+            //METHODES D'AFFICHAGE DU CONTENU D'UN TABLEAU
 
             // Utiliser print_r pour afficher le tableau sans la balise <pre>
             echo "<h4>Utiliser print_r pour afficher le tableau sans  la balise pre </h4>";
@@ -57,8 +60,33 @@
             echo "<pre>";
             echo implode(" ; ", $mickael);
             echo "</pre>";
+
+            //Itérer sur un tableau des tableaux
+            $users = [
+                [
+                    'full_name' => 'Mickaël Andrieu',
+                    'email' => 'mickael.andrieu@exemple.com',
+                    'age' => 34,
+                ],
+                [
+                    'full_name' => 'Mathieu Nebra',
+                    'email' => 'mathieu.nebra@exemple.com',
+                    'age' => 34,
+                ],
+                [
+                    'full_name' => 'Laurène Castor',
+                    'email' => 'laurene.castor@exemple.com',
+                    'age' => 28,
+                ],
+            ];
+            $lines = 3; // nombre d'utilisateurs dans le tableau
+            $counter = 0;
+            while ($counter < $lines) {
+                echo $users[$counter]['full_name'] . ' =>' . $users[$counter]['email'] . ' =>' .$users[$counter]['age'].' years old'.'<br />';
+                $counter++;
+            }    
         ?>
-<!--------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------ >
     <h3> Travail du 01 juillet 2024 </h3>
         <?php
             $isEnabled = true; // La condition d'accès
