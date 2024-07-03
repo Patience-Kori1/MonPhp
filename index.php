@@ -5,6 +5,208 @@
     <meta charset="utf-8" />
 </head>
 <body style="margin-left: 50px;">
+    
+    <h2 style="color:crimson"> Travail du 03 juillet 2024 </h2>
+        <?php
+            //NOTION DE TABLEAU : INDEX, ASSOCIATIF, UNIDIMENSIONNEL, MULTIDIMENSIONNEL
+
+            //Tableaux Numériques (Indexés) 
+            $indexedArray = ['apple', 'banana', 'cherry'];
+            echo $indexedArray[0] . "<br>"; // Affiche 'apple'
+            echo $indexedArray[1] . "<br>"; // Affiche 'banana'
+            echo $indexedArray[2] . "<br>"; // Affiche 'cherry'
+
+            //tableaux associatifs 
+            echo"<br>";
+            $associativeArray = [
+                'name' => 'Alice',
+                'age' => 25,
+                'city' => 'Paris'
+            ];
+            echo $associativeArray['name']; // Affiche 'Alice'
+            echo $associativeArray['age']; // Affiche 25
+            echo $associativeArray['city']; // Affiche 'Paris'
+
+            // Tableau Numérique Multidimensionnel
+            $multiArray = [
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ];
+            echo $multiArray[0][1]; // Affiche 2
+            echo $multiArray[2][0]; // Affiche 7
+            
+            // Tableau Associatif Multidimensionnel
+            $multiAssocArray = [
+                'person1' => [
+                    'name' => 'Alice',
+                    'age' => 25
+                ],
+                'person2' => [
+                    'name' => 'Bob',
+                    'age' => 30
+                ]
+            ];
+            echo $multiAssocArray['person1']['name']; // Affiche 'Alice'
+            echo $multiAssocArray['person2']['age']; // Affiche 30
+
+            // Tableau Multidimensionnel Mixte
+            $students = [
+                [
+                    'name' => 'Alice',
+                    'grades' => [85, 90, 78]
+                ],
+                [
+                    'name' => 'Bob',
+                    'grades' => [92, 88, 79]
+                ]
+            ];
+            echo $students[0]['name']; // Affiche 'Alice'
+            echo $students[1]['grades'][1]; // Affiche 88
+            
+            // Tableaux Numériques avec des Indices Personnalisés
+            $customIndexedArray = [
+                10 => 'apple',
+                20 => 'banana',
+                30 => 'cherry'
+            ];
+            echo $customIndexedArray[10]; // Affiche 'apple'
+            echo $customIndexedArray[30]; // Affiche 'cherry'
+            
+            // Tableaux Multidimensionnels Associatifs et Numériques Combinés
+            $data = [
+                'students' => [
+                    'class1' => [
+                        'names' => ['Alice', 'Bob', 'Charlie'],
+                        'ages' => [20, 21, 22]
+                    ],
+                    'class2' => [
+                        'names' => ['David', 'Eve', 'Frank'],
+                        'ages' => [23, 24, 25]
+                    ]
+                ]
+            ];         
+            echo $data['students']['class1']['names'][0]; // Affiche 'Alice'
+            echo $data['students']['class2']['ages'][1]; // Affiche 24 
+            
+            //IMBRICATION DE LA BOUCLE FOREACH DANS DES TABLEAUX MULTIDIMENSIONNELS
+            echo"<br>";
+            $recipes = [
+                [
+                    'title' => 'Poulet au curry',
+                    'author' => 'Patos'
+                ],
+                [
+                    'title' => 'Boeuf bourguignon',
+                    'author' => 'Ousman'
+                ],
+                [
+                    'title' => 'Les lasagnes',
+                    'author' => 'Alexia'
+                ]
+            ];
+
+            // Premier foreach pour itérer sur chaque recette
+            foreach ($recipes as $recipe) {
+                echo "Recette :<br>";
+                
+                // Deuxième foreach pour itérer sur chaque clé-valeur de la recette
+                foreach ($recipe as $key => $value) {
+                    echo " - " . ucfirst($key) . ": " . $value . "<br>";
+                }
+                echo "<br>";
+            }
+            
+            echo"<br>";
+            $number = 1;
+            foreach ($recipes as $recipe) {
+                $numberRecipe = $number++;
+                echo $numberRecipe. ". Voici ma recette ". $numberRecipe . " = <br>";
+
+                    foreach ($recipe as $key => $value) {
+                        echo " - $key : $value <br>";
+                    }
+                echo"<br>";
+            }
+
+            // IMBRICATION DE LA BOUCLE FOREACH DANS DES TABLEAUX MULTIDIMENSIONNELS COMPLEXE
+            $school = [
+
+                'students' => [
+                    [
+                        'name' => 'Alice',
+                        'age' => 17,
+                        'classes' => [
+                            [
+                                'courseName' => 'Math',
+                                'teacher' => 'Mr. Smith',
+                                'grades' => [90, 85, 88]
+                            ],
+                            [
+                                'courseName' => 'English',
+                                'teacher' => 'Mrs. Johnson',
+                                'grades' => [80, 87, 85]
+                            ]
+                        ]
+                    ],
+                    [
+                        'name' => 'Bob',
+                        'age' => 18,
+                        'classes' => [
+                            [
+                                'courseName' => 'Science',
+                                'teacher' => 'Dr. Brown',
+                                'grades' => [78, 82, 85]
+                            ],
+                            [
+                                'courseName' => 'History',
+                                'teacher' => 'Mr. Green',
+                                'grades' => [88, 89, 92]
+                            ]
+                        ]
+                    ]
+                ],
+
+                'teachers' => [
+                    [
+                        'name' => 'Mr. Smith',
+                        'subject' => 'Math',
+                        'students' => ['Alice', 'Charlie']
+                    ],
+                    [
+                        'name' => 'Mrs. Johnson',
+                        'subject' => 'English',
+                        'students' => ['Alice', 'David']
+                    ],
+                    [
+                        'name' => 'Dr. Brown',
+                        'subject' => 'Science',
+                        'students' => ['Bob']
+                    ],
+                    [
+                        'name' => 'Mr. Green',
+                        'subject' => 'History',
+                        'students' => ['Bob']
+                    ]
+                ]
+            ];
+            // Afficher les informations des étudiants
+            foreach ($school['students'] as $student) {
+                echo "Student: " . $student['name'] . " (Age: " . $student['age'] . ")<br>";
+                foreach ($student['classes'] as $class) {
+                    echo " - Course: " . $class['courseName'] . " (Teacher: " . $class['teacher'] . ")<br>";
+                    echo "   Grades: " . implode(', ', $class['grades']) . "<br>";
+                }
+                echo "<br>";
+            }
+            
+            // Afficher les informations des enseignants
+            foreach ($school['teachers'] as $teacher) {
+                echo "Teacher: " . $teacher['name'] . " (Subject: " . $teacher['subject'] . ")<br>";
+                echo " - Students: " . implode(', ', $teacher['students']) . "<br><br>";
+            }
+        ?>
+<!------------------------------------------------------------------------------------>
     <h2 style="color:crimson"> Travail du 02 juillet 2024 </h2>
         <?php
             //NOTION DE TABLEAU EN PHP
@@ -141,12 +343,19 @@
                 echo $numberRecipe .". Recette : " . $recipes[$counter1]['title'] . " || Auteur : ". $recipes[$counter1]['author']. "<br>";
             } 
 
-            //Itération avec la boucle foreach
+            //Itération avec la boucle foreach avec clé
             echo "<br><br>";
             $number = 1;
             foreach ($recipes as $cle => $property) {
                 $numberRecipe = $number++;
-                echo $numberRecipe .". Recette : " . $property['title'] . " || Auteur : ". $property['title']. "<br>";
+                echo $numberRecipe . ". Recette : " . $property['title'] . " || Auteur : ". $property['author']. "<br>". " <p style=\"margin-left: 50px;\">" . "Et voilà la clé " . $cle . "</p><br><br>";
+            }
+
+            //Itération avec la boucle foreach sans clé
+            $number = 1;
+            foreach ($recipes as $recipe) {
+                $numberRecipe = $number++;
+                echo $numberRecipe . ". Je vous présente une recette « ". $recipe['title'] ." ». Elle a été réalisé par « " . $recipe['author'] . " ». <br><br>";
             }
         ?>
 <!-------------------------------------------------------------------------------------->
