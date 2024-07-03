@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
 </head>
 <body style="margin-left: 50px;">
-    <h2 style="color:crimson"> Travail du 01 juillet 2024 </h2>
+    <h2 style="color:crimson"> Travail du 02 juillet 2024 </h2>
         <?php
             //NOTION DE TABLEAU EN PHP
 
@@ -140,8 +140,16 @@
                 $numberRecipe = $number++;
                 echo $numberRecipe .". Recette : " . $recipes[$counter1]['title'] . " || Auteur : ". $recipes[$counter1]['author']. "<br>";
             } 
+
+            //Itération avec la boucle foreach
+            echo "<br><br>";
+            $number = 1;
+            foreach ($recipes as $cle => $property) {
+                $numberRecipe = $number++;
+                echo $numberRecipe .". Recette : " . $property['title'] . " || Auteur : ". $property['title']. "<br>";
+            }
         ?>
-<!------------------------------------------------------------------------------------ >
+<!-------------------------------------------------------------------------------------->
     <h3> Travail du 01 juillet 2024 </h3>
         <?php
             $isEnabled = true; // La condition d'accès
