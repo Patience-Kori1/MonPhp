@@ -205,6 +205,44 @@
                 echo "Teacher: " . $teacher['name'] . " (Subject: " . $teacher['subject'] . ")<br>";
                 echo " - Students: " . implode(', ', $teacher['students']) . "<br><br>";
             }
+
+            //FAIRE DES RECHERCHES DANS UN TABLEAU
+
+            //Rechercher une valeur avec la fonction in_array()
+            $array = ['apple', 'banana', 'cherry'];
+            if (in_array('banana', $array)) {
+                echo "Banana is in the array";
+            }
+
+            //Rechercher une valeur et retourner la clé avec la fonction array_search()
+            $users = [
+                'Mathieu Nebra',
+                'Mickaël Andrieu',
+                'Laurène Castor',
+            ];
+            $positionMathieu = array_search('Mathieu Nebra', $users);
+            echo '"Mathieu" se trouve en position ' . $positionMathieu . PHP_EOL;
+            
+            $positionLaurène = array_search('Laurène Castor', $users);
+            echo '"Laurène" se trouve en position ' . $positionLaurène . PHP_EOL;
+
+            //Rechercher une clé avec la fonction in_array()
+            $recipe3 = [
+                'title' => 'Salade Romaine',
+                'recipe' => 'Etape 1 : Lavez la salade ; Etape 2 : euh ...',
+                'author' => 'laurene.castor@exemple.com',
+            ];
+            
+            if (array_key_exists('title', $recipe3))
+            {
+                echo 'La clé "title" se trouve dans la recette !';
+            }
+            
+            if (array_key_exists('commentaires', $recipe3))
+            {
+                echo 'La clé "commentaires" se trouve dans la recette !';
+            }
+        ?>
         ?>
 <!------------------------------------------------------------------------------------>
     <h2 style="color:crimson"> Travail du 02 juillet 2024 </h2>
