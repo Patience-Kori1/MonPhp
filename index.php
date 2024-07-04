@@ -5,6 +5,39 @@
     <meta charset="utf-8" />
 </head>
 <body style="margin-left: 50px;">
+
+    <h2 style="color:crimson"> Travail du 04 juillet 2024 </h2>
+        <?php
+            // Correction de l'exercice de la fin du chapitre des boucles et des tableaux
+            $recipes = [
+                [
+                    'title' => 'Cassoulet',
+                    'recipe' => 'Etape 1 : des flageolets !',
+                    'author' => 'mickael.andrieu@exemple.com',
+                    'is_enabled' => true,
+                ],
+                [
+                    'title' => 'Couscous',
+                    'recipe' => 'Etape 1 : de la semoule',
+                    'author' => 'mickael.andrieu@exemple.com',
+                    'is_enabled' => false,
+                ],
+                [
+                    'title' => 'Escalope milanaise',
+                    'recipe' => 'Etape 1 : prenez une belle escalope',
+                    'author' => 'mathieu.nebra@exemple.com',
+                    'is_enabled' => true,
+                ],
+            ];
+            foreach ($recipes as $key => $recipe) {
+                $IsEnabledExiste = array_key_exists('is_enabled', $recipe);
+                $ValueIsEnable = $recipe['is_enabled']; 
+                if ($IsEnabledExiste === true && $ValueIsEnable == true) {
+                    echo " Pour le tableau de la recette : <h4>« ". $recipe['title'] . " »</h4>, la clé 'is_enabled' existe et elle est égale à : " . $recipe['is_enabled']. " " . "<br><br>";
+                    }
+            }
+        ?>
+<!-------------------------------------------------------------------------------------->
     
     <h2 style="color:crimson"> Travail du 03 juillet 2024 </h2>
         <?php
