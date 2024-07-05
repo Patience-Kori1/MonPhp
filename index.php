@@ -36,6 +36,132 @@
                     echo " Pour le tableau de la recette : <h4>« ". $recipe['title'] . " »</h4>, la clé 'is_enabled' existe et elle est égale à : " . $recipe['is_enabled']. " " . "<br><br>";
                     }
             }
+
+            // Fonction de rappel ou callback
+            echo "<br><br>";
+            function square1($n) {
+                return $n * $n;
+            }
+            
+            $numbers = [1, 2, 3, 4, 5];
+            $squares = array_map('square', $numbers);
+            
+            print_r($squares); // Affiche [1, 4, 9, 16, 25]
+            
+            // Utilisation d'une fonction anonyme comme callback
+            $cubes = array_map(function($n) {
+                return $n * $n * $n;
+            }, $numbers);
+            
+            print_r($cubes); // Affiche [1, 8, 27, 64, 125]
+
+            //NOTION DE FONCTION EN PHP
+
+            //1. Fonction sans paramètre
+            function sayHello() {
+                echo "Hello, world!";
+            }
+            sayHello(); // Affiche "Hello, world!"
+            
+            //2. Fonction avec paramètre
+            echo "<br><br>";
+            function greet($name) {
+                echo "Hello, " . $name . "!";
+            }
+            greet("Alice"); // Affiche "Hello, Alice!"
+            greet("Bob");   // Affiche "Hello, Bob!"
+
+            //3. Fonction avec avec valeur de retour
+            echo "<br><br>";
+            function add($a, $b) {
+                return $a + $b;
+            }
+            $result = add(2, 3); // $result vaut 5
+            echo $result;        // Affiche 5
+
+            //4. Fonction avec paramètre par défaut
+            echo "<br><br>";
+            function saluer($nom = "inconnu") {
+                echo "Bonjour, $nom!<br>";
+            }
+            saluer();         // Affiche: Bonjour, inconnu!
+            saluer("Alice");  // Affiche: Bonjour, Alice!
+
+            //5. Fonction avec paramètre par référence qui permet à la fonction de modier la variable passée en argument
+            echo "<br><br>";
+            function ajouterUn(& $nombre) {
+                $nombre++;
+            }
+            $a = 5;
+            ajouterUn($a);
+            echo $a;  // Affiche: 6
+
+            //6. Fonction variadique où, on peut mettre un nombre différent d'arguments
+            echo "<br><br>";
+            function sum(...$numbers) {
+                return array_sum($numbers);
+            }
+            echo sum(1, 2, 3) . "<br>";       // Affiche 6
+            echo sum(4, 5, 6, 7) . "<br>";    // Affiche 22
+            echo sum(5,3,12,87,56,47,23,98) . "<br>";  // Affiche 331
+
+            // 7. Fonction avec Variable à portée locale (inaccessible en déhors de la fonction) 
+            echo "<br><br>";
+            function test() {
+                $x = 10; // Variable locale
+                echo $x;
+            } 
+            test(); // Affiche 10
+            // echo $x; // Erreur, $x n'est pas définie
+
+            //8. Fonction avec Variable à portée globale
+            echo "<br><br>";
+            $x = 50;
+            function testo() {
+                global $x;
+                echo $x;
+            }
+            testo(); // Affiche 10
+
+            //9. Fonctions anonymes ou closure
+            echo "<br><br>";
+            $greet = function($name) {
+                echo "Hello, " . $name . "!";
+            };
+            
+            $greet("Alice"); // Affiche "Hello, Alice!"
+            
+            //10. Fonction closure avec utilisation de array_map
+            echo "<br><br>";
+            $numbers = [1, 2, 3, 4, 5];
+            $squares = array_map(function($n) {
+                return $n * $n;
+            }, $numbers);  
+            var_dump($squares); // Affiche [1, 4, 9, 16, 25]
+
+            //11. Fonction avec Typage de fonctions
+            echo "<br><br>";
+            function addo(int $a, int $b): int {
+                return $a + $b;
+            }
+            echo addo(2, 3); // Affiche 5
+            // echo add(2, "3"); // Erreur, car "3" n'est pas un entier
+            
+            //12. FONCTIONS DE RAPPEL, OU CALLBACKS
+
+            //A. Fonction de rappel avec une fonction existante
+            echo "<br><br>";
+
+            // Définir une fonction
+            function square($n) {
+                return $n * $n ;
+            }
+
+            // Utiliser array_map avec le nom de la fonction existante
+            $numbers = [1, 2, 3, 4, 5];
+            $squares = array_map('square', $numbers);
+            print_r($squares); // Affiche [1, 4, 9, 16, 25]
+            
         ?>
 <!-------------------------------------------------------------------------------------->
     
