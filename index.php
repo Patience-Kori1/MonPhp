@@ -6,6 +6,33 @@
 </head>
 <body style="margin-left: 50px;">
 
+ <!-- Basics PHP avec Quentin-->
+
+    <?php
+        $names = ["Bill", "Joe", "Jack"];
+        foreach ($names as $name) {
+    ?>
+
+    <h1> Bonjour <?= $name ?> </h1>
+
+    <?php
+        }
+    ?>
+
+    <form action="backend.php" method="POST">
+        <label for="Nom">Nom du produit : </label>
+        <input type="text" value="" name="Nom" placeholder="Pomme" required > <br><br>
+
+        <label for="Prix">Prix du produit : </label>
+        <input type="text" value="" name="Prix" placeholder="5 euros" min="0" step="0.01" required> <br><br>
+
+        <input type="submit">
+    </form>
+
+
+
+    <!--C'est ancien 2024-->
+
     <h2 style="color:crimson"> Travail du 04 juillet 2024 </h2>
         <?php
             // Correction de l'exercice de la fin du chapitre des boucles et des tableaux
